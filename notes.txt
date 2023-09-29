@@ -1,0 +1,16 @@
+1- put header links in drop menu: [responsive]
+2- about page problem
+3- create class page
+#vans_page:
+4- vans page: add favourite vans in local storage
+5- make element for [add favourite]
+
+
+white-space: nowrap;
+// Map::
+/*
+  [1]- 
+  [2]- responsive
+*/
+/*------start: [] --------*/
+/*------end: [] --------*/

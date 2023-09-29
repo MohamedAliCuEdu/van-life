@@ -1,0 +1,170 @@
+@use '../variables' as *;
+@use '../library/mixins/mixins' as *;
+
+// Map::
+/*
+  [1]- vans-page
+  [2]- vans-card
+  [3]- responsive
+*/
+/*------start: [1] vans-page--------*/
+.vans-page {
+  margin-top: 76px;
+  .container {
+    padding: 50px 15px 30px;
+    h1 {
+      margin: 0 0 20px;
+    }
+    .filters {
+      display: flex;
+      gap: 40px;
+      padding: 20px 0;
+      margin: 0 0 30px;
+      border-bottom: 1px solid $border-ccc;
+      button {
+        color: $alt-black-fc;
+        font-size: 18px;
+        text-transform: capitalize;
+      }
+      .type-btns {
+        display: flex;
+        gap: 40px;
+        a {
+          display: block;
+          width: 100px;
+          text-align: center;
+          color: $alt-black-fc;
+          background-color: $filter-Bg;
+          text-transform: capitalize;
+          padding: 10px 20px;
+          border-radius: 6px;
+          &:hover,
+          &.active {
+            color: $basic;
+          }
+          &.simple:hover,
+          &.simple.active {
+            background-color: $orange;
+          }
+          &.luxury:hover,
+          &.luxury.active {
+            background-color: $black;
+          }
+          &.rugged:hover,
+          &.rugged.active {
+            background-color: $green;
+          }
+        }
+      }
+      .clear-btn {
+        background-color: transparent;
+        text-decoration: underline;
+        &:hover {
+          font-weight: 600;
+        }
+      }
+    }
+    .vans-list {
+      @include grid-column(300px, 1fr, 40px);
+    }
+  }
+}
+/*------end: [1] vans-page--------*/
+/*------start: [2] van-card--------*/
+.van-card {
+  background-color: $widget-bg;
+  text-transform: capitalize;
+  padding: 15px;
+  padding-bottom: 60px;
+  border-radius: 6px;
+  position: relative;
+  img {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 6px;
+  }
+  .details {
+    & > div {
+      display: flex;
+      justify-content: space-between;
+    }
+    .top {
+      color: $main-black-fc;
+      h2 {
+        margin: 0 0 10px;
+      }
+      i {
+        font-size: 25px;
+        transition: 0s;
+        &:hover{
+          color: goldenrod;
+        }
+        &.fav{
+          color: goldenrod;
+          font-weight: 900;
+        }
+      }
+    }
+    .bottom {
+      width: calc(100% - 30px);
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      .type {
+        color: $basic;
+        font-size: 18px;
+        padding: 10px 20px;
+        border-radius: 6px;
+        &.simple {
+          background-color: $orange;
+        }
+        &.luxury {
+          background-color: $black;
+        }
+        &.rugged {
+          background-color: $green;
+        }
+      }
+      .price {
+        color: $main-black-fc;
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+  }
+}
+/*------end: [2] van-card--------*/
+/*------start: [3] responsive--------*/
+@media (max-width: 768px) {
+  .vans-page .container {
+    .filters {
+      flex-direction: column;
+      gap: 20px;
+      align-items: flex-start;
+      .type-btns {
+        gap: 20px;
+      }
+    }
+    .vans-list {
+      @include grid-column(180px, 1fr, 20px);
+      .van-card .details {
+        .top {
+          h2 {
+            font-size: 20px;
+          }
+        }
+        .bottom {
+          span {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 400px) {
+  .vans-page .container .vans-list {
+    @include grid-column(120px, 1fr, 40px);
+  }
+}
+/*------end: [3] responsive--------*/

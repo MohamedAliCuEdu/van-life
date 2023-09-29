@@ -1,0 +1,20 @@
+@use './variables' as *;
+body {
+  font-family: "inter", sans-serif;
+  background-color: $body-bg;
+}
+/*
+  - for make [main_section] take all height without layouts
+  - header-ht => 76px
+  - footer-ht => 80px
+*/
+.full-ht{
+  height: calc(100vh - (76px + 80px));
+  margin:  76px 0 0;
+}
+@media (max-width: 768px){
+  .full-ht{
+    height: calc(100vh - (73px + 80px));
+    margin:  73px 0 0;
+  }
+}

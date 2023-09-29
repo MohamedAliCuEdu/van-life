@@ -1,0 +1,167 @@
+@use "./variables" as *;
+@use "./library/mixins/mixins" as *;
+// Map::
+/*
+  [1]- header
+  [2]- footer
+  [3]- responsive
+*/
+/*------start: [1] header--------*/
+header {
+  width: 100%;
+  background-color: $nav-bg;
+  border: 1px solid $border-ccc;
+  text-transform: capitalize;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    & > a {
+      margin-right: 15px;
+      img {
+        width: 150px;
+      }
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .links {
+        display: flex;
+        align-items: center;
+        & > a {
+          color: $alt-black-fc;
+          font-size: 20px;
+          font-weight: 600;
+          padding: 10px 0px;
+          margin: 0 35px;
+          position: relative;
+          &.active,
+          &:hover {
+            color: $main-black-fc;
+            &::before {
+              width: 100%;
+            }
+          }
+          &::before {
+            @include ele(0, 2px, $main-black-fc);
+            bottom: 0;
+            left: 0;
+          }
+        }
+        .user {
+          position: relative;
+          & > i {
+            font-size: 30px;
+            margin: 0 20px;
+            &:hover {
+              font-weight: 900;
+            }
+          }
+          .drop-menu {
+            width: fit-content;
+            background-color: $nav-bg;
+            border: 1px solid $border-ccc;
+            position: absolute;
+            top: -200px;
+            right: 20px;
+            transition: 0.5s;
+            z-index: 0;
+            &:before {
+              @include ele-arrow(bottom, 10px, $nav-bg);
+              top: -20px;
+              right: 5px;
+            }
+            &.down {
+              top: calc(100% + 35px);
+            }
+            li {
+              @include fill-bg($widget-bg, 0.3s);
+              a {
+                color: $main-black-fc;
+                display: flex;
+                padding: 15px 20px;
+                position: relative;
+                z-index: 2;
+                &:first-of-type {
+                  border-bottom: 1px solid $border-ddd;
+                }
+                span{
+                  white-space: nowrap;
+                }
+                i {
+                  width: 30px;
+                  font-size: 22px;
+                  margin-right: 40px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/*------end: [1] header--------*/
+/*------start: [2] footer--------*/
+footer {
+  width: 100%;
+  color: $foot-fc;
+  background-color: $foot-bg;
+  text-align: center;
+  padding: 30px 15px;
+  z-index: 5;
+}
+/*------end: [2] --------*/
+/*------start: [3] responsive --------*/
+@media (max-width: 769px) {
+  header .container nav {
+    .links {
+      a,
+      i {
+        margin: 0 10px;
+      }
+      .user {
+        & > i {
+          font-size: 20px;
+          margin: 0 10px;
+        }
+        .drop-menu {
+          width: 150px;
+          li {
+            a {
+              gap: 0;
+              padding: 10px 5px;
+              i {
+                font-size: 16px;
+                margin-right: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  header .container {
+    & > a.logo img {
+      width: 100px;
+    }
+    nav .links {
+      a {
+        font-size: 18px;
+      }
+      a,
+      i {
+        margin: 0 5px;
+      }
+    }
+  }
+}
+/*------end: [2] responsive--------*/

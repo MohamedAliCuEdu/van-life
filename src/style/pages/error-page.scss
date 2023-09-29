@@ -1,0 +1,52 @@
+@use '../variables' as *;
+@use '../library/mixins/mixins' as *;
+// Map::
+/*
+  [1]- error-page
+  [2]- responsive
+*/
+/*------start: [1] error-page--------*/
+.error-page{
+  display: flex;
+  align-items: center;
+  .container{
+    text-transform: capitalize;
+    text-align: center;
+    p{
+      text-align: center;
+      font-size: 32px;
+      color: $main-black-fc;
+      font-weight: 800;
+      margin: 0 0 40px;
+      line-height: 1.5;
+    }
+    a{
+      display: block;
+      width: 500px;
+      color: $white-fc;
+      background-color: $black-bg;
+      font-size: 20px;
+      font-weight: 600;
+      padding: 20px 30px;
+      margin: 0 auto;
+      border-radius: 6px;
+    }
+  }
+}
+/*------end: [1] error-page--------*/
+/*------start: [2] responsive --------*/
+@media (max-width: 768px) {
+  .error-page .container{
+    p{
+      text-align: start;
+    }
+  }
+}
+@media (max-width: 550px) {
+  .error-page .container{
+    a{
+      width: 100%;
+    }
+  }
+}
+/*------end: [2] responsive--------*/

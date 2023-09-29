@@ -1,0 +1,85 @@
+@use '../variables' as *;
+// Map::
+/*
+  [1]- about
+  [2]- responsive
+*/
+/*------start: [1] about--------*/
+.about-page .container {
+  padding: 80px 15px;
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 30px;
+    img {
+      max-width: 550px;
+      border-radius: 6px;
+    }
+    .content-txt {
+      color: $main-black-fc;
+      h1 {
+        line-height: 1.3;
+        margin: 0 0 15px;
+      }
+      p {
+        font-size: 18px;
+        line-height: 1.5;
+        &:not(:last-of-type) {
+          margin: 0 0 15px;
+        }
+      }
+    }
+  }
+  .vans-link {
+    background-color: #ffcc8d;
+    text-transform: capitalize;
+    padding: 20px;
+    border-radius: 6px;
+    h2 {
+      color: $main-black-fc;
+      line-height: 1.3;
+      margin: 0 0 20px;
+    }
+    a {
+      display: block;
+      width: fit-content;
+      color: $white-fc;
+      background-color: $main-black-fc;
+      font-size: 18px;
+      font-weight: 600;
+      padding: 15px 30px;
+      border-radius: 6px;
+    }
+  }
+}
+/*------end: [1] about--------*/
+/*------start: [2] responsive--------*/
+@media (max-width: 991px) {
+  .about-page .container {
+    padding: 10px 15px;
+    .content {
+      flex-wrap: wrap;
+      gap: 20px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+@media (max-width: 600px) {
+  .about-page .container {
+    .content .content-txt {
+      h1 {
+        font-size: 22px;
+      }
+    }
+  }
+  .vans-link {
+    h2 {
+      font-size: 22px;
+    }
+  }
+}
+/*------end: [2] responsive--------*/
