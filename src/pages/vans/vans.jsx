@@ -6,14 +6,15 @@ import {
 } from "react-router-dom";
 
 // style files:
-import "../style/pages/vans.scss";
+import "../../style/pages/vans.scss";
 
 // components:
-import VanCard from "../components/vanCard";
+import VanCard from '../../components/vanCard';
 
 function Vans() {
   // [vans data] from Loader:
   const allVans = useLoaderData();
+  console.log(allVans)
 
   // filter vans:
   const [searchParams, setSearchParams] = useSearchParams();
@@ -24,7 +25,7 @@ function Vans() {
     : allVans;
 
   return (
-    <main className="vans-page">
+    <main className="vans-page page-content">
       <div className="container">
         <h1>explore our vans options</h1>
         <nav className="filters">

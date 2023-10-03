@@ -93,17 +93,6 @@
       h2 {
         margin: 0 0 10px;
       }
-      i {
-        font-size: 25px;
-        transition: 0s;
-        &:hover{
-          color: goldenrod;
-        }
-        &.fav{
-          color: goldenrod;
-          font-weight: 900;
-        }
-      }
     }
     .bottom {
       width: calc(100% - 30px);

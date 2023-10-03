@@ -6,7 +6,7 @@ import '../style/pages/about.scss';
 
 function About() {
   return (
-    <main className="about-page full-ht">
+    <main className="about-page page-content">
       <div className="container">
         <div className="content">
           <img src={require("../assets/backgrounds/about.png")} alt="about" />

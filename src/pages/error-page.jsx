@@ -13,7 +13,7 @@ function ErrorPage() {
   return (
     <>
     <Header/>
-      <main className="error-page full-ht">
+      <main className="error-page page-content">
         <div className="container">
           <p>Sorry, the page you were looking for was not found.</p>
           <Link to="" className="">

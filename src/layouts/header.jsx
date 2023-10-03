@@ -10,7 +10,7 @@ function Header() {
   }
   
   return (
-    <header>
+    <header className='header'>
       <div className="container">
         <Link className="logo" to="/">
           <img src={require("../assets/logo.png")} alt="logo" />
@@ -36,9 +36,9 @@ function Header() {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="sign">
+                  <NavLink to="login">
                     <i className="fa-solid fa-right-to-bracket"></i>
-                    <span>sign in</span>
+                    <span>log in</span>
                   </NavLink>
                 </li>
               </ul>

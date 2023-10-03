@@ -6,7 +6,7 @@ import "../style/pages/home.scss";
 
 function Home() {
   return (
-    <main className="home full-ht">
+    <main className="home page-content">
       <div className="container">
         <h1>you got the travel plans, we got the travel vans.</h1>
         <p>

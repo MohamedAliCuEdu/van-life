@@ -1,20 +1,78 @@
-@use './variables' as *;
+@use "./variables" as *;
 body {
+  height: 100vh;
   font-family: "inter", sans-serif;
   background-color: $body-bg;
 }
-/*
-  - for make [main_section] take all height without layouts
-  - header-ht => 76px
-  - footer-ht => 80px
-*/
-.full-ht{
-  height: calc(100vh - (76px + 80px));
-  margin:  76px 0 0;
+.root {
+  height: inherit;
+  display: grid;
+  grid-template-rows: 1fr auto;
 }
-@media (max-width: 768px){
-  .full-ht{
+.fit-height{
+  height: fit-content;
+}
+.page-content {
+  margin: 76px 0 0; // must be equal to [nav_height]
+}
+@media (max-width: 768px) {
+  .page-contnet {
     height: calc(100vh - (73px + 80px));
-    margin:  73px 0 0;
+    margin: 73px 0 0;
+  }
+}
+h1, h2, h3, h4, h5{
+  color: $main-black-fc;
+}
+p{
+  color: $alt-black-fc;
+}
+// classes
+.back-btn {
+  color: $white-fc;
+  background-color: $alt-black-bg;
+  font-size: 18px;
+  text-transform: capitalize;
+  padding: 10px 20px 10px 30px;
+  border-radius: 6px;
+  position: relative;
+  i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+  }
+  &:hover {
+    background-color: $black-bg;
+    i {
+      left: 10px;
+    }
+  }
+}
+
+// fav-icon:
+.fav-icon {
+  font-size: 25px;
+  transition: 0s;
+  &:hover {
+    color: $gold;
+  }
+  &.fav {
+    color: $gold;
+    font-weight: 900;
+  }
+}
+
+// stars:
+.stars{
+  display: flex;
+  font-size: 18px;
+  gap: 4px;
+  i{
+    transition: 0s;
+  }
+  &:hover i{
+    color: $gold;
+    animation: icon-beat 0.8s linear infinite;
   }
 }

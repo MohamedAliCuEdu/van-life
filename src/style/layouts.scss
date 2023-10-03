@@ -48,7 +48,7 @@ header {
             }
           }
           &::before {
-            @include ele(0, 2px, $main-black-fc);
+            @include ele(0, 3px, $main-black-fc);
             bottom: 0;
             left: 0;
           }
@@ -75,6 +75,12 @@ header {
               @include ele-arrow(bottom, 10px, $nav-bg);
               top: -20px;
               right: 5px;
+            }
+            &:after {
+              @include ele-arrow(bottom, 11px, $border-ccc);
+              top: -22px;
+              right: 4px;
+              z-index: -1;
             }
             &.down {
               top: calc(100% + 35px);
@@ -114,7 +120,6 @@ footer {
   background-color: $foot-bg;
   text-align: center;
   padding: 30px 15px;
-  z-index: 5;
 }
 /*------end: [2] --------*/
 /*------start: [3] responsive --------*/

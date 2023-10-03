@@ -5,6 +5,18 @@
 4- vans page: add favourite vans in local storage
 5- make element for [add favourite]
 
+#van-detail:
+6- close veiw from outside image
+7- img-options problem
+
+
+
+?????????????:
+1 => <base href="/" />
+
+2 => _redirects:
+/* /index.html 200
+
 
 white-space: nowrap;
 // Map::

@@ -1,6 +1,6 @@
 function Footer(){
   return(
-    <footer>
+    <footer className="footer">
       Ⓒ 2022 #VANLIFE
     </footer>
   )
