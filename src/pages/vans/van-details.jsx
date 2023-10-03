@@ -1,7 +1,7 @@
 // react components:
 import React from "react";
-import { useState, useRef } from "react";
-import { Link, useLoaderData, useLocation, useParams } from "react-router-dom";
+import { useRef } from "react";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 
 // components:
 import FavIcon from "../../components/fav-Icon";

@@ -1,5 +1,5 @@
 // react component:
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 function RatingStars() {
   let arrOfStars = [
@@ -17,12 +17,7 @@ function RatingStars() {
       )
     );
   }
-  // icon - animation:
-  // const starsId = useRef();
-  // // const
-  // function iconAnimation() {
-  //   starsId.current.classList.toggle("fa-beat");
-  // }
+  
   return (
     <div className="stars">
       {stars.map((ele) => {

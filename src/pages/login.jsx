@@ -7,8 +7,8 @@ import "../style/pages/sign.scss";
 
 function LoginPage() {
 
-  const [searchP, setSearch] = useSearchParams();
-  const logMsg = searchP.get("msg");
+  const searchParam = useSearchParams();
+  const logMsg = searchParam.get("msg");
 
 
   const [loginForm, setLoginForm] = useState({email: "", password:""})
